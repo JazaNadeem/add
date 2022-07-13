@@ -1,0 +1,146 @@
+@media(max-width:567px) {
+    #titlebar {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .country-flag {
+        display: none;
+    }
+    .single-page-header {
+        margin-bottom: 10px;
+    }
+    #titlebar h1,
+    #titlebar h2 {
+        font-size: 22px;
+        line-height: 40px;
+    }
+    /* Homepage */
+    .app-question:before {
+        background: #00000082;
+    }
+    .app-question {
+        background-size: inherit;
+        background-position: 50%;
+    }
+    .full-width-carousel-fix .slick-slider {
+        width: 100%;
+    }
+    .freelancers-list-layout .freelancer-overview .freelancer-avatar {
+        width: 110px;
+    }
+    .default-slick-carousel {
+        left: 0;
+    }
+    .freelancers-list-layout .star-rating:before {
+        float: left;
+    }
+    .homepage .lawyer-name {
+        width: 175px
+    }
+    .lawyer-name {
+        width: 190px
+    }
+    a.apply-now-button {
+        width: 100%;
+    }
+    .freelancer-overview .freelancer-avatar img {
+        min-height: 110px;
+        min-width: 110px;
+    }
+    /* Lawyers */
+    .sticky-lawyers {
+        position: inherit;
+        height: 375px;
+    }
+    .speaks {
+        display: none;
+    }
+    /* Lawyer Details*/
+    .salary-box {
+        display: none !important;
+    }
+    .single-page-header.freelancer-header .header-details h3 {
+        font-size: 22px;
+    }
+    .single-page-header .header-details h3 span {
+        font-size: 19px;
+    }
+    .sidebar-container .profile-overview {
+        margin-top: 20px;
+        padding: 10px;
+        padding-bottom: 0;
+    }
+    #book-consultation-btn {
+        display: block;
+        margin-top: 20px;
+        padding: 15px;
+        width: 100% !important;
+    }
+    #book-consultation {
+        padding-top: 1px;
+    }
+    /* Questions */
+    .questions-breadcrumbs ul li:nth-child(3) {
+        display: inline-block;
+        width: 160px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+    }
+    /* Answers */
+    .sticky-questions {
+        position: inherit;
+        height: 210px;
+    }
+    .answers .star-rating {
+        position: inherit;
+    }
+    .answer-breadcrumbs ul li:nth-child(2) {
+        display: none !important;
+    }
+    .answers .freelancer-overview .freelancer-avatar img {
+        min-height: 75px;
+        min-width: 75px;
+    }
+    /*Checkout*/
+    .checkout-head {
+        padding: 30px 20px;
+    }
+    .checkout .pricing-plan {
+        display: none;
+    }
+    /*Home*/
+    #searchLawyers label {
+        display: none;
+        ;
+    }
+    #searchLawyers .intro-banner-search-form .intro-search-field.with-label {
+        margin-top: 20px;
+    }
+    .near-me-btn {
+        height: 41px;
+        margin-right: 10px;
+    }
+    .intro-search-button .button {
+        width: 100%;
+    }
+    #breadcrumbs .middle-breadcrumbs {
+        width: 130px;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+    }
+    #tulipbot-launcher-12 {
+        z-index: 9999999 !important;
+    }
+    #sign-in-dialog,
+    #small-dialog-1,
+    #small-dialog-2,
+    #small-dialog-3,
+    #small-dialog-4,
+    #small-dialog {
+        padding: 0;
+    }
+}

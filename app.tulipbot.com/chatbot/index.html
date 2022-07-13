@@ -1,0 +1,202 @@
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=yes">
+
+<body>
+    <style>
+        .chat-screen .chat-header,
+        .botui-message-content.loading,
+        .chat-screen .chat-body .chat-bubble.me,
+        .human.botui-message-content,
+        .chat-screen .chat-mail button,
+        button.botui-actions-buttons-button:hover {
+            background: -webkit-gradient(linear, left top, right top, from(#514a9d), to(#24c6dc));
+        }
+
+        .botui-actions-buttons-button {
+            color: #087483;
+            border: 1px solid #087483;
+        }
+
+        .chat-screen .chat-header,
+        .botui-message-content.loading,
+        .chat-screen .chat-body .chat-bubble.me,
+        .human.botui-message-content,
+        .chat-screen .chat-mail button,
+        button.botui-actions-buttons-button:hover {
+            color: white !important;
+        }
+    </style>
+    <input type="hidden" id="chatLocation" value="Faisalabad, PB, Pakistan | PK">
+    <!--<input type="hidden" id="referUrl" value="">-->
+    <!-- Phone Country Code -->
+    <link href="https://app.tulipbot.com//chatbot/assets/css/intlTelInput.css" rel="stylesheet" type="text/css">
+    <!-- Phone Country Code -->
+    <link href="https://app.tulipbot.com//app-assets/css/core/colors/palette-gradient.min.css" rel="stylesheet" type="text/css">
+    <link href="https://app.tulipbot.com//app-assets/css/core/colors/palette-gradient.min.css" rel="stylesheet" type="text/css">
+    <link href="https://app.tulipbot.com//css/main.css?v=0.01" rel="stylesheet" type="text/css">
+    <link href="https://app.tulipbot.com//chatbot/assets/css/chatBot.css?v=0.06" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <input type="hidden" id="baseUrl" value="https://app.tulipbot.com/">
+    <input type="hidden" id="apikey" value="vkeel-8fe02f685f1cd69a299e96a4fc7c1ceb">
+    <!--Bot theme CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/botui/build/botui.min.css" />
+    <!--Bot Files CSS-->
+
+    <span id="valid-msg" class="hide">✓ Valid</span>
+    <span id="error-msg" class="hide"></span>
+    <!-- Chat bot UI start -->
+    <div class="chat-screen show-chat">
+        <div class="chat-header">
+            <div class="chat-header-title">
+                <img src="https://app.tulipbot.com/app-assets/images/avatar/avatar-9.png" class="chat-avatar" style="background: #ffffff">
+                <span class="fa fa-circle online-dot" aria-hidden="true" style=""></span>
+                <b class="avatar-name">Ridhi</b>
+            </div>
+            <div class="chat-header-option">
+                <span class="dropdown custom-dropdown">
+                                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                                                                            <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                                                                        </svg>
+                                                                    </a>
+                                                                </span>
+            </div>
+
+        </div>
+        <div class="chat-body botui-app-container" id="thermostat-bot" styles="height: 430px">
+            <!-- Bot Code-->
+            <bot-ui></bot-ui>
+            <!-- Bot Code-->
+        </div>
+        <a href="https://www.tulipbot.com" target="_blank">
+            <div class="chat-input chat-footer" style="display: none">
+                Restart Chat
+            </div>
+            <div class="powered-footer" style="">
+                ⚡ Powered <i class="ft-zap text-warning"></i> By Tulip Bot </div>
+        </a>
+    </div>
+
+    <!-- Chat Bot UI Ends -->
+
+    <!--            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+    <!-- Phone Country Code -->
+    <script src="https://app.tulipbot.com//chatbot/assets/js/intlTelInput.js"></script>
+    <!-- Phone Country Code -->
+    <script>
+        proceed = false;
+        $(document).ready(function() {
+            let isAlreadyLoaded = localStorage.getItem("tulipBotAction");
+            console.log("isAlreadyLoaded", isAlreadyLoaded)
+            if (!isAlreadyLoaded) {
+                setTimeout(function() {
+                    if (!proceed) {
+                        showChatBot()
+                    }
+                }, 10000)
+            }
+            //Toggle fullscreen
+            $(".chat-bot-icon").click(function(e) {
+                showChatBot()
+            });
+            $(".feather-x").click(function(e) {
+                hideChatBot();
+            });
+            $(".ct-button").click(function(e) {
+                showChatBot()
+            });
+            $("#tulipbot-launcher-12", window.parent.document).click(function(e) {
+                showChatBot()
+            });
+        });
+
+        function showChatBot() {
+            initBot()
+            $('.tulipbot-right', window.parent.document).css('visibility', 'hidden');
+            $('.tulipbot-right', window.parent.document).css('opacity', '0');
+            $('#TulipBot-messenger', window.parent.document).css('display', 'block');
+            $('#TulipBot-messenger', window.parent.document).css('opacity', '1');
+        }
+
+        function hideChatBot() {
+            $('.tulipbot-right', window.parent.document).css('visibility', 'visible');
+            $('.tulipbot-right', window.parent.document).css('opacity', '1');
+            $('#TulipBot-messenger', window.parent.document).css('display', 'none');
+            $('#TulipBot-messenger', window.parent.document).css('opacity', '0');
+        }
+
+        function phoneValidate() {
+            var input = document.querySelector(".custom-phone"),
+                errorMsg = document.querySelector("#error-msg"),
+                validMsg = document.querySelector("#valid-msg");
+
+            // here, the index maps to the error code returned from getValidationError - see readme
+            var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+            // initialise plugin
+            var iti = window.intlTelInput(input, {
+                utilsScript: "../../build/js/utils.js?1613236686837"
+            });
+
+            var reset = function() {
+                input.classList.remove("error");
+                errorMsg.innerHTML = "";
+                errorMsg.classList.add("hide");
+                validMsg.classList.add("hide");
+            };
+
+            // on blur: validate
+            input.addEventListener('blur', function() {
+                reset();
+                if (input.value.trim()) {
+                    if (iti.isValidNumber()) {
+                        validMsg.classList.remove("hide");
+                    } else {
+                        input.classList.add("error");
+                        var errorCode = iti.getValidationError();
+                        errorMsg.innerHTML = errorMap[errorCode];
+                        errorMsg.classList.remove("hide");
+                    }
+                }
+            });
+
+            // on keyup / change flag: reset
+            input.addEventListener('change', reset);
+            input.addEventListener('keyup', reset);
+        }
+    </script>
+    <script>
+        var params = new Object();
+        var BASE_URL = 'https://app.tulipbot.com/';
+        var chatSound = null
+        chatSound = new Audio($("#baseUrl").val() + "/chatbot/assets/sounds/2.mp3");
+    </script>
+
+    <!--Bot Files JS-->
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://unpkg.com/botui/build/botui.js"></script>
+    <script src="https://app.tulipbot.com//chatbot/assets/common.js?v=0.05"></script>
+
+    <script src="https://app.tulipbot.com//chatbot/bots/vkeel-8fe02f685f1cd69a299e96a4fc7c1ceb.js?v=1657717983"></script>
+
+
+    <!--<div class="modal-backdrop fade in" id="chat-overlay" style="display: none"></div>-->
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-221595595-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-221595595-1', {
+            page_path: window.top.location.href
+        });
+    </script>
+</body>
